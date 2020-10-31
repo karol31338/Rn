@@ -93,4 +93,13 @@ public class Product
                 "Attempt to sell an out of stock item: " + name);
         }
     }
+
+    //Start GetterSetterExtension Source Code
+    public void setName(String name)
+    {
+        this.name = name;
+    }//end method setName
+
+    //End GetterSetterExtension Source Code
+//!
 }

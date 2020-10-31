@@ -1,0 +1,12 @@
+LabClass co452Lab = new LabClass(3);
+Student will = new Student("Will", "1234");
+Student james = new Student("James", "2345");
+Student tiffany = new Student("Tiffany", "3456");
+co452Lab.setInstructor("Nicholas Day");
+co452Lab.setRoom("G100");
+co452Lab.setTime("Tuesday 29th September 2020");
+will.getCredits()
+    returned int 0
+will.addCredits(20);
+james.addCredits(20);
+tiffany.addCredits(20);

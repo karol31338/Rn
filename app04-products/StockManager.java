@@ -26,8 +26,21 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        
     }
+    
+    public void renameProduct(int id, String newName)
+    {
+        for(Product product : stock)
+        {
+            product.get
+    }
+    
+    public void removeProduct(int id)
+    {
+        
+    }
+   
     
     /**
      * Receive a delivery of a particular product.
@@ -37,7 +50,50 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            product.increaseQuantity(amount);
+            System.out.println("Product Delivered : " + product);
+        }
+        else
+        {
+            System.out.println("Product ID " + id + " NOT FOUND!!!");
+        }
     }
+    
+    /**
+     * Sell one of the given item.
+     * Show the before and after status of the product.
+     * @param id The ID of the product being sold.
+     */
+    public void sellProduct(int id)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null) 
+        {
+            printDetails(id);
+            product.sellOne();
+            printDetails(id);
+        }
+    }
+    
+    /**
+     * Show details of the given product. If found,
+     * its name and stock quantity will be shown.
+     * @param id The ID of the product to look for.
+     */
+    public void printDetails(int id)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null) 
+        {
+            System.out.println(product.toString());
+        }
+    }
+    
     
     /**
      * Try to find a product in the stock with the given id.
@@ -46,6 +102,14 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
+        for(Product product : stock)
+        {
+            if(product.getID() == id)
+            {
+                return product;
+            }
+        }
+        
         return null;
     }
     
@@ -64,7 +128,20 @@ public class StockManager
     /**
      * Print details of all the products.
      */
-    public void printProductDetails()
+    public void printAllProducts()
     {
+        for(Product product : stock)
+        {
+            System.out.println(product);
+            System.out.println(stock.size());
+        }
+    }
+    
+    public void printProductNames()
+    {
+        for(Product product : stock)
+        {
+            System.out.println(product.getID());
+        }
     }
 }

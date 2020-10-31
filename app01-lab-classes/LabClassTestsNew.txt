@@ -1,0 +1,14 @@
+Student will = new Student("Will Brown", "12345");
+Student katie = new Student("Katie White", "23456");
+Student james = new Student("James Black", "34567");
+LabClass co452Lab = new LabClass(3);
+will.addCredits(20);
+katie.addCredits(20);
+james.addCredits(20);
+co452Lab.enrollStudent(will);
+co452Lab.enrollStudent(katie);
+co452Lab.enrollStudent(james);
+co452Lab.setInstructor("Nicholas Day");
+co452Lab.setRoom("G100");
+co452Lab.setTime("Tuesday 29th of September 2020");
+Course Computing = new Course(3);
